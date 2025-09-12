@@ -16,14 +16,24 @@
 
 ```yaml
 e88seed2keyc_encrypted/
-├── bin/
-│ └── gmkeylib.dll # Decompiled GM DLL with embedded algorithm
-├── src/
- ├── gmkey.cs # Main interface
- ├── Crypto.cs # Decryption logic
- ├── Helpers.cs # Seed/key helpers
- ├── LibLoader.cs # DLL loader wrapper
- └── LicGen.cs # Executable to run the algorithm
+├── ai.md # - Explanation for model.
+│
+├── bin/ # - Binary directory containing compiled or external resources.
+│   └── gmkeylib.dll # — Native DLL likely containing the seed-key algorithm implementations.
+├── gmkeylib.dll # - Root-level duplicate of the same DLL, maybe for convenience.
+│
+├── gmkeylib.lic # - License file required by gmkeylib.dll for functionality.
+│
+├── gmseedkeyalgs.md # - Markdown file listing known seed-key algorithms and observations.
+│
+├── LicGen.cs # - C# file for generating .lic license files compatible with the DLL.
+│
+├── src/ # - C# source code for interacting with the native DLL and performing seed-key calculations:
+│   ├── Crypto.cs # — Contains cryptographic routines, possibly reverse-engineered.
+│   ├── gmkey.cs # — Main logic for seed-key conversion and algorithm selection.
+│   ├── Helpers.cs # — Utility functions (e.g., hex conversions, validation).
+│   └── LibLoader.cs # — Dynamically loads gmkeylib.dll and invokes its methods.
+└── TestHarness.cs # - Test driver to demonstrate usage, pass seeds, and receive computed keys.
 ```
 
 ## Run
