@@ -45,7 +45,7 @@ sudo pacman -S mono  # or sudo apt install mono-complete
 ```
 2. Compile the Executable
 ```bash
-cd FINISHED/src
+cd e88seed2keyc_encrypted/src
 ```
 ```bash
 mcs -out:../bin/LicGen.exe *.cs
